@@ -1,5 +1,31 @@
+######################## Текущий путь к указанному файлу
 def getFilepath(filename):
 	# путь к скрипту
 	path = os.path.dirname(os.path.realpath(__file__))
 	# путь к файлу
 	return path + '\\' + filename
+
+######################## 
+path_to_current_file = os.path.realpath(__file__)
+print('path to the current file:', path_to_current_file)
+ 
+path_to_current_folder = os.path.dirname(path_to_current_file)
+print('path to the current folder:', path_to_current_folder)
+
+folder_inside_current_folder = os.path.dirname(os.path.join(path_to_current_folder, 'static/'))
+print('path to the custom folder:', folder_inside_current_folder)
+
+######################## Родительский путь по умолчанию (относительный)
+# директория, где запущен скрипт
+# os.path.abspath(os.curdir)
+# os.getcwd())
+
+# директория, где расположен скрипт
+# os.path.abspath(__file__)
+# os.path.realpath(__file__)
+
+####################### Импорт модулей из других папок
+sys.path.append('D:\Python\myScripts')
+import functions as fn
+mfile = fn.getFilepath('Протокол контактов.xlsx')
+print(mfile) 
