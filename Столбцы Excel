@@ -1,0 +1,5 @@
+import pandas
+###################################	Выбор одного столбца
+df = pandas.read_excel(filepath, parse_dates = ['Дата'], dayfirst = True)
+df1 = df[['Дата']]
+print(df1.head())
