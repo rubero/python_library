@@ -1,0 +1,5 @@
+def getFilepath(filename):
+	# путь к скрипту
+	path = os.path.dirname(os.path.realpath(__file__))
+	# путь к файлу
+	return path + '\\' + filename
