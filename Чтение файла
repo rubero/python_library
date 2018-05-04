@@ -1,0 +1,4 @@
+import pandas
+data = pandas.read_excel(filepath)
+###################################	Преобразовать даты в формат ISO
+data = pandas.read_excel(filepath, parse_dates = ['start', 'stop'], dayfirst = True)
