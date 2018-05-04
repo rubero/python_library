@@ -1,9 +1,18 @@
 import matplotlib as mpl
 import datetime as dt
 
-# Преобразование даты
+################################### Преобразование даты
 some_time_str = '2010-12-20 05:00:00'
 some_time_dt = dt.datetime.strptime(some_time_str, '%Y-%m-%d %H:%M:%S')
 some_time_num = mpl.dates.date2num(some_time_dt) # 734126.20833333337
 print(some_time_dt)
 print(some_time_num)
+
+################################### Преобразование даты в столбце
+grp = df1.groupby(by=[df1['Дата'].map(lambda x : (x.hour, x.minute))]) 
+print(grp.count())
+
+################################### Преобразование даты в столбце
+times = pd.DatetimeIndex(df1['Дата']) 
+grouped = df1.groupby([times.hour, times.minute])
+print(grouped.count())
