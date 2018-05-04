@@ -1,0 +1,7 @@
+import pandas as pd
+from numpy.random import randn
+
+ser = pd.Series(randn(1000))
+print(ser) # float64
+ser.plot(kind='kde')
+show()
